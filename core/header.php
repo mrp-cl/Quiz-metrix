@@ -29,7 +29,8 @@
     <link rel="stylesheet" href="<?php echo $domain;?>/assets/vendor/libs/apex-charts/apex-charts.css" />
     <script src="<?php echo $domain;?>/assets/vendor/js/helpers.js"></script>
     <script src="<?php echo $domain;?>/assets/js/config.js"></script>
-    <script src="<?php echo $domain;?>/js/main_content.js"></script>
+    
+    <!-- <script src="<?php echo $domain;?>/js/main_content.js"></script> -->
 
    
   </head>
