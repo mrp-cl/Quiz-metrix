@@ -215,4 +215,26 @@
             <button id="saveTimerBtn" class="btn primary-btn">Save Settings</button>
         </div>
     </div>
-</div>
+</div> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<?php 
+    // require dirname(dirname(__DIR__));
+    require dirname(dirname(__DIR__)) . '/database/config.php';
+
+    $database = new Database(); 
+    $conn = $database->getConnection(); 
+    $schedules = $conn->query("SELECT * FROM `tbl_event`");
+    $sched_res = [];
+    foreach($schedules->fetch_all(MYSQLI_ASSOC) as $row){
+        $row['sdate'] = date('Y-m-d', strtotime($row['start_date']));
+        $row['edate'] = date('Y-m-d',strtotime($row['end_date']));
+        $sched_res[$row['id']] = $row;
+    }
+
+    ?>
+
+
+ <script>
+      var scheds = $.parseJSON('<?= json_encode($sched_res) ?>') 
+      console.log(scheds);
+</script>

@@ -4,7 +4,7 @@
         private $hostName = "localhost";
         private $userName ="root";
         private $passWord = "";
-        private $database = "quizmetrix_db"; 
+        private $database = "quizmetrix"; 
 
         protected $conn; 
 
