@@ -28,7 +28,7 @@ include '../../shared-student/navbar.php';
 
     <div class="container mt-4" id="quizManager">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2>Manage Quizzes</h2>
+            <h5>Manage Quizzes</h5>
             <a href="index.php" class="btn btn-primary">Create New Quiz</a>
         </div>
         

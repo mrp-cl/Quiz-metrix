@@ -14,7 +14,7 @@
 			</li>
 			<li class="divider" data-text="study-tools">Tools</li>
 
-			<li><a class="nav-link" href="#"><i class='bx bxs-chart icon' ></i> Flashcard</a></li>
+			<li><a class="nav-link" href="../flashcard"><i class='bx bxs-chart icon' ></i> Flashcard</a></li>
 			<li><a class="nav-link" href="../quiz"><i class='bx bxs-widget icon' ></i> Quiz</a></li>
 			<li><a class="nav-link" href="#"><i class='bx bxs-widget icon' ></i> Annotate</a></li>
 			<li><a class="nav-link" href="#"><i class='bx bxs-widget icon' ></i> Notes</a></li>
