@@ -1,6 +1,0 @@
-<?php   
-$DOMAIN = $_SERVER['HTTP_HOST'];  
-define("ABSOLUTE_PATH_DOMAIN", $DOMAIN .'/'.'thesis');     
-
-$ABSOLUTE_URL = ABSOLUTE_PATH_DOMAIN;
-?>
