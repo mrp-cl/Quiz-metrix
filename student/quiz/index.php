@@ -27,7 +27,7 @@ include '../../shared-student/navbar.php';
     <div class="main-content">
         <div class="quiz-creator">
             <div class="d-flex justify-content-between align-items-center mb-3">
-                <h3 class="mb-0">Create Quiz</h3>
+                <h5 class="mb-0">Create Quiz</h5>
                 <div>
                     <button class="btn btn-outline-secondary me-2" id="clearFormBtn">Clear Form</button>
                     <button class="btn btn-primary me-2" id="createQuizBtn">Create Quiz</button>
