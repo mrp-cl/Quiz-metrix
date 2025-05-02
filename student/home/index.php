@@ -20,7 +20,18 @@
 	?>
 </head>
 <body>
-
+        <?php
+        session_start();
+        // Check if user is logged in
+        if (!isset($_SESSION['user'])) {
+        header("Location: ../../landing-page/");
+        exit();
+        } 
+        
+        $userData = $_SESSION['user'];
+        include '../../shared-student/header.php';
+        ?>
+</head>
 	<?php 
 	
 	include '../../shared-student/sidebar.php';

@@ -36,7 +36,7 @@
                     <div id="errorMessage" class="alert alert-danger d-none"></div>
 
                    <!-- Stylish Microsoft 365 Login Button -->
-                    <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize" 
+                   <a href="<?php  echo $authUrl  ?>" 
                     class="btn microsoft-login w-100 d-flex align-items-center justify-content-center">
                         <span>Login with Microsoft 365</span>
                     </a>

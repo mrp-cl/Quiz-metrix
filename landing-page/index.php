@@ -1,3 +1,25 @@
+<?php 
+    session_start();
+      require '../Middleware/Class/Config.php'; 
+      use Middleware\Class\Config;    
+
+      echo (new Config())->VendorConfig(); 
+      $state = bin2hex(random_bytes(16));
+      $_SESSION['oauth_state'] = $state;
+
+      $params = [
+          'client_id'     => CLIENT_ID,
+          'response_type' => 'code',
+          'redirect_uri'  => REDIRECT_URI,
+          'response_mode' => 'query',
+          'scope'         => SCOPES,
+          'state'         => $state,
+      ];
+      
+      $authUrl = AUTHORIZE_ENDPOINT . '?' . http_build_query($params);
+      
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
