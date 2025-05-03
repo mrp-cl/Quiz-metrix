@@ -273,8 +273,8 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     // Check if we have at least one question
-    if (quizData.questions.length === 1) {
-      showError("Please add at least two question to your quiz.")
+    if (quizData.questions.length <= 3) {
+      showError("Please add at least 4 question to your quiz.")
       return
     }
 
@@ -338,8 +338,8 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     // Check if we have at least one question
-    if (quizData.questions.length === 1) {
-      showError("Please add at least two question to your quiz.")
+    if (quizData.questions.length <= 3) {
+      showError("Please add at least 4 question to your quiz.")
       return
     }
 
@@ -608,3 +608,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 5000)
   }
 })
+
+$(document).ready(function(){
+  $('#mainQuizTable').DataTable();
+});

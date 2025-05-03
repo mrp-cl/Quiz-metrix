@@ -1,4 +1,5 @@
 <?php
+$con = mysqli_connect("localhost", "root", "", "quiz_creator");
 require_once('../includes/db_config.php');
 
 // Get quiz ID from request
@@ -40,4 +41,3 @@ $quiz['questions'] = $questions;
 echo json_encode(['success' => true, 'quiz' => $quiz]);
 
 $conn->close();
-?>

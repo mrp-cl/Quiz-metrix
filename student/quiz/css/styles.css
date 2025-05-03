@@ -140,10 +140,11 @@ body {
 
 .quiz-option input[type="radio"] {
   margin-right: 10px;
+  
 }
 
 .true-false-option {
-  width: 48%;
+  width: 100%;
   display: inline-block;
   text-align: center;
 }

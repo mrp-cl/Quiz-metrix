@@ -1,21 +1,26 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Take Quiz</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/styles.css"> 
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <?php include '../../shared-student/header.php'; ?>
 </head>
+
 <body>
 
-<?php
-include '../../shared-student/sidebar.php';
-include '../../shared-student/navbar.php';
-?>
+    <?php
+    include '../../shared-student/sidebar.php';
+    include '../../shared-student/navbar.php';
+    ?>
     <div class="container mt-4">
         <div class="quiz-taker">
             <div class="d-flex justify-content-between align-items-center mb-4">
@@ -24,9 +29,9 @@ include '../../shared-student/navbar.php';
                     Time remaining: <span id="timer">00:00</span>
                 </div>
             </div>
-            
+
             <p id="quizDescription" class="mb-4">Quiz description will appear here.</p>
-            
+
             <!-- Question Container -->
             <div id="questionContainer">
                 <!-- Questions will be dynamically inserted here -->
@@ -37,7 +42,7 @@ include '../../shared-student/navbar.php';
                     <p>Loading quiz...</p>
                 </div>
             </div>
-            
+
             <div class="d-flex justify-content-between mt-4">
                 <button class="btn btn-secondary" id="prevBtn">Previous</button>
                 <div>
@@ -45,7 +50,7 @@ include '../../shared-student/navbar.php';
                 </div>
                 <button class="btn btn-primary" id="nextBtn">Next</button>
             </div>
-            
+
             <div class="text-center mt-4">
                 <button class="btn btn-success" id="submitQuizBtn">Submit Quiz</button>
             </div>
@@ -60,6 +65,7 @@ include '../../shared-student/navbar.php';
                     <h5 class="modal-title" id="resultsModalLabel">Quiz Results</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
                 <div class="modal-body">
                     <h4 class="text-center mb-4">Your Score</h4>
                     <div class="text-center">
@@ -83,4 +89,5 @@ include '../../shared-student/navbar.php';
     <?php include '../../shared-student/script.php'; ?>
 
 </body>
+
 </html>

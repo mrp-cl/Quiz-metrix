@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,20 +10,23 @@
     <link rel="stylesheet" href="css/styles.css">
     <?php include '../../shared-student/header.php'; ?>
 </head>
-<body>
 
-<?php
-include '../../shared-student/sidebar.php';
-include '../../shared-student/navbar.php';
-?>
+<body>
+    <?php
+    session_start();
+    ?>
+    <?php
+    include '../../shared-student/sidebar.php';
+    include '../../shared-student/navbar.php';
+    ?>
     <ul class="nav nav-underline ">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.php">Create</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="manage-quizzes.php">Manage Quizzes</a>
-                    </li>
-                </ul>
+        <li class="nav-item">
+            <a class="nav-link active" href="index.php">Create</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="manage-quizzes.php">Manage Quizzes</a>
+        </li>
+    </ul>
 
     <div class="main-content">
         <div class="quiz-creator">
@@ -34,11 +38,11 @@ include '../../shared-student/navbar.php';
                     <button class="btn btn-success" id="startQuizBtn">Start Quiz</button>
                 </div>
             </div>
-            
+
             <!-- Alert for messages -->
             <div class="alert alert-success d-none" id="successAlert"></div>
             <div class="alert alert-danger d-none" id="errorAlert"></div>
-            
+
             <!-- Recent Quizzes Section -->
             <div class="recent-section mb-4">
                 <h6 class="recent-header">Recent Quizzes</h6>
@@ -48,13 +52,13 @@ include '../../shared-student/navbar.php';
                         <p>Loading recent quizzes...</p>
                     </div>
                 </div>
-              
+
             </div>
-            
-            
+
+
         </div>
 
-<hr>
+        <hr>
 
         <div class="quiz-creator" id="quizCreator">
             <!-- New Quiz Form -->
@@ -66,25 +70,25 @@ include '../../shared-student/navbar.php';
                     </div>
                     <div class="col-md-6">
                         <label for="quizDescription" class="form-label">Description</label>
-                        <input type="text" class="form-control" id="quizDescription" placeholder="Enter quiz description">
+                        <textarea class="form-control" id="quizDescription" rows="4" placeholder="Enter quiz description"></textarea>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Question Cards -->
             <h5 class="mb-3">Questions</h5>
             <div id="questionCards">
                 <!-- Question cards will be dynamically added here -->
             </div>
-            
+
             <!-- Add Card Button -->
             <button class="btn btn-light w-100 add-card-btn mt-3" id="addCardBtn">
                 Add question <i class="bi bi-plus"></i>
             </button>
-                </div>
         </div>
+    </div>
 
-        
+
     <!-- Start Quiz - Quiz Settings Modal -->
     <div class="modal fade" id="quizSettingsModal" tabindex="-1" aria-labelledby="quizSettingsModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -137,8 +141,8 @@ include '../../shared-student/navbar.php';
         </div>
     </div>
 
-     <!-- Creating Quiz - Quiz Settings Modal -->
-     <div class="modal fade" id="quizSaveModal" tabindex="-1" aria-labelledby="quizSettingsModalLabel" aria-hidden="true">
+    <!-- Creating Quiz - Quiz Settings Modal -->
+    <div class="modal fade" id="quizSaveModal" tabindex="-1" aria-labelledby="quizSettingsModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -183,7 +187,7 @@ include '../../shared-student/navbar.php';
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="confirmSaveQuizBtn" >Save Quiz</button>
+                    <button type="button" class="btn btn-primary" id="confirmSaveQuizBtn">Save Quiz</button>
                 </div>
             </div>
         </div>
@@ -193,4 +197,5 @@ include '../../shared-student/navbar.php';
     <script src="js/script.js"></script>
     <?php include '../../shared-student/script.php'; ?>
 </body>
+
 </html>

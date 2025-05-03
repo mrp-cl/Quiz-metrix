@@ -77,6 +77,8 @@
   .main-content {
     flex: 1;
     padding: 20px;
+    margin: auto;
+    max-width: 1300px;
   }
   
   header {
