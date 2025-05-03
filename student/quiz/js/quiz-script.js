@@ -273,23 +273,31 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function createTrueFalseInterface(index, question) {
-    const trueChecked = userAnswers[index] === "true" ? "checked" : ""
-    const falseChecked = userAnswers[index] === "false" ? "checked" : ""
-
+    const trueChecked = userAnswers[index] === "true" ? "checked" : "";
+    const falseChecked = userAnswers[index] === "false" ? "checked" : "";
+  
     return `
-            <div class="true-false-container mt-3">
-                <div class="quiz-option true-false-option">
-                    <input type="radio" name="q${index}" id="q${index}true" value="true" ${trueChecked}>
-                    <label for="q${index}true" class="text-center">True</label>
-                </div>
-                <div class="quiz-option true-false-option">
-                    <input type="radio" name="q${index}" id="q${index}false" value="false" ${falseChecked}>
-                    <label for="q${index}false" class="text-center">False</label>
-                </div>
-            </div>
-        `
+      <div class="true-false-container mt-3">
+        <div class="quiz-option true-false-option" onclick="selectOption(this, 'q${index}true')">
+          <input type="radio" name="q${index}" id="q${index}true" value="true" ${trueChecked}>
+          <label for="q${index}true" class="text-center">True</label>
+        </div>
+        <div class="quiz-option true-false-option" onclick="selectOption(this, 'q${index}false')">
+          <input type="radio" name="q${index}" id="q${index}false" value="false" ${falseChecked}>
+          <label for="q${index}false" class="text-center">False</label>
+        </div>
+      </div>
+    `;
   }
-
+  window.selectOption = function(div, inputId) {
+    document.getElementById(inputId).checked = true;
+  
+    const siblings = div.parentElement.querySelectorAll('.quiz-option');
+    siblings.forEach(el => el.classList.remove('selected'));
+  
+    div.classList.add('selected');
+  };
+  
   function showPreviousQuestion() {
     if (currentQuestionIndex > 0) {
       showQuestion(currentQuestionIndex - 1)

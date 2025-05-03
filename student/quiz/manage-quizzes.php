@@ -1,41 +1,48 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Quizzes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/styles.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     <?php include '../../shared-student/header.php'; ?>
 </head>
+
 <body>
 
-<?php
-include '../../shared-student/sidebar.php';
-include '../../shared-student/navbar.php';
-?>
-            
-                <ul class="nav nav-underline">
-                    <li class="nav-item">
-                        <a class="nav-link " href="index.php">Create</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="manage-quizzes.php">Manage Quizzes</a>
-                    </li>
-                </ul>
-            
+    <?php
+    include '../../shared-student/sidebar.php';
+    include '../../shared-student/navbar.php';
+    ?>
+
+    <ul class="nav nav-underline">
+        <li class="nav-item">
+            <a class="nav-link " href="index.php">Create</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="manage-quizzes.php">Manage Quizzes</a>
+        </li>
+    </ul>
+
 
     <div class="container mt-4" id="quizManager">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h5>Manage Quizzes</h5>
             <a href="index.php" class="btn btn-primary">Create New Quiz</a>
         </div>
-        
+
         <div class="alert alert-info d-none" id="statusMessage"></div>
-        
+
         <div class="table-responsive">
-            <table class="table table-striped">
+            <table id="mainQuizTable" class="table table-striped">
                 <thead>
                     <tr>
                         <th>Title</th>
@@ -46,6 +53,7 @@ include '../../shared-student/navbar.php';
                         <th>Actions</th>
                     </tr>
                 </thead>
+
                 <tbody id="quizTable">
                     <tr>
                         <td colspan="6" class="text-center">
@@ -114,8 +122,16 @@ include '../../shared-student/navbar.php';
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/manage-quizzes.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="../quiz/js/script.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src=""></script>
     <?php include '../../shared-student/script.php'; ?>
 
 </body>
+
+
 </html>

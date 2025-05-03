@@ -57,12 +57,25 @@ document.addEventListener("DOMContentLoaded", () => {
                             <td>${updatedDate}</td>
                             <td>${questionCount}</td>
                             <td>
-                                <div class="btn-group">
-                                    <a href="quiz.php?id=${quiz.quiz_id}" class="btn btn-sm btn-primary">Take</a>
-                                    <a href="index.php?id=${quiz.quiz_id}" class="btn btn-sm btn-secondary">Edit</a>
-                                    <button class="btn btn-sm btn-info view-results" data-quiz-id="${quiz.quiz_id}" data-quiz-title="${quiz.title}">Results</button>
-                                    <button class="btn btn-sm btn-danger delete-quiz" data-quiz-id="${quiz.quiz_id}">Delete</button>
-                                </div>
+                              <div class="dropdown">
+                                  <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenu${quiz.quiz_id}" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Actions
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu${quiz.quiz_id}">
+                                  <li>
+                                    <a class="dropdown-item text-primary" href="quiz.php?id=${quiz.quiz_id}">Take</a>
+                                  </li>
+                                  <li>
+                                    <a class="dropdown-item text-secondary" href="index.php?id=${quiz.quiz_id}">Edit</a>
+                                  </li>
+                                  <li>
+                                    <button class="dropdown-item text-info view-results" data-quiz-id="${quiz.quiz_id}" data-quiz-title="${quiz.title}">Results</button>
+                                  </li>
+                                  <li>
+                                    <button class="dropdown-item text-danger delete-quiz" data-quiz-id="${quiz.quiz_id}">Delete</button>
+                                  </li>
+                                </ul>
+                              </div>
                             </td>
                         `
 

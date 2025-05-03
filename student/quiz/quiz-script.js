@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return `
             <div class="true-false-container mt-3">
-                <div class="quiz-option true-false-option">
+                <div class="quiz-option true-false-option" id="q${index}">
                     <input type="radio" name="q${index}" id="q${index}true" value="true" ${trueChecked}>
                     <label for="q${index}true" class="text-center">True</label>
                 </div>

@@ -270,7 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     // Check if we have at least one question
-    if (quizData.questions.length === 1) {
+    if (quizData.questions.length <= 3) {
       showError("Please add at least two question to your quiz.")
       return
     }
@@ -335,7 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     // Check if we have at least one question
-    if (quizData.questions.length === 1) {
+    if (quizData.questions.length <= 3) {
       showError("Please add at least two question to your quiz.")
       return
     }

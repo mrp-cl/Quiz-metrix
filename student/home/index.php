@@ -28,7 +28,8 @@
         exit();
         } 
         
-        $userData = $_SESSION['user'];
+        $userData = $_SESSION['user']; 
+        $_SESSION['USER_NAME'] = $userData['displayName'];
         include '../../shared-student/header.php';
         ?>
 </head>
