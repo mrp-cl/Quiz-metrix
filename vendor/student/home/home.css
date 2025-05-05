@@ -19,6 +19,7 @@
 	--dark-blue: #0C5FCD;
 	--red: #FC3B56;
 	--primary: #6366f1;
+	--light-primary: #E0E7FF;
 }
 
 html {
@@ -113,9 +114,11 @@ li {
 	white-space: nowrap;
 }
 
+
+
 #sidebar .side-menu > li > a:hover {
-	background: #324053;
-	color: rgb(250, 241, 241);
+	background: var(--light-primary);
+	color: var(--primary);
 }
 #sidebar .side-menu > li > a.active .icon-right {
 	transform: rotateZ(90deg);
