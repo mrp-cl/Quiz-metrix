@@ -6,6 +6,7 @@
   <title>Quizmetrix Dashboard</title>
 
 
+  <?php include '../../shared-student/header.php'; ?>
 
   
   <!-- Font Awesome -->
@@ -17,11 +18,20 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/styles.css">
 
-  <?php include '../../shared-student/header.php'; ?>
 
 </head>
-
 <body>
+<?php
+        session_start();
+        // Check if user is logged in
+        if (!isset($_SESSION['user'])) {
+        header("Location: ../../landing-page/");
+        exit();
+        } 
+
+        $userData = $_SESSION['user']; 
+        $_SESSION['USER_NAME'] = $userData['displayName'];
+        ?>
 <?php
 include '../../shared-student/sidebar.php';
 include '../../shared-student/navbar.php';

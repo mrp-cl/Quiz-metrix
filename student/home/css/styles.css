@@ -29,7 +29,6 @@
   .right-column {
     display: flex;
     flex-direction: column;
-    gap: 20px;
   }
   
   /* Cards */
@@ -312,6 +311,8 @@
     align-items: center;
     padding: 10px 15px;
     border-top: 1px solid #f0f0f0;
+    background-color: var(--bs-card-cap-bg);
+
   }
   
   .timer-start-btn {
@@ -686,7 +687,7 @@
   }
   
   .card.current-events-card {
-    height: 347px;
+    height: auto;
 }
 
 .icon-btn{
