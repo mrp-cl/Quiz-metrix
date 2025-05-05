@@ -3,7 +3,7 @@
 $host = 'localhost';
 $username = 'root';
 $password = '';
-$database = 'productivity_dashboard';
+$database = 'quiz_metrix';
 
 // Create connection
 $conn = new mysqli($host, $username, $password, $database);

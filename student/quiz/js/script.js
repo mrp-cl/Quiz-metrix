@@ -80,18 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
       createQuiz(true)
     })
 
-    // Confirm save quiz button in modal
-    confirmSaveQuizBtn.addEventListener("click", () => {
-      // Check if at least one answer type is selected
-      const selectedTypes = getSelectedAnswerTypes()
-      if (selectedTypes.length === 0) {
-        answerTypeWarning.classList.remove("d-none")
-        return
-      }
-      window.location.reload();
-
-
-    })
     
     // Start quiz button
     startQuizBtn.addEventListener("click", () => {
@@ -299,12 +287,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
           if (showSettingsModal) {
             // Show the quiz settings modal
-            quizSaveModal = new bootstrap.Modal(document.getElementById("quizSaveModal"))
-            quizSaveModal.show()
-          } else {
             showSuccess("Quiz saved successfully!")
             // Reload recent quizzes
             loadRecentQuizzes()
+            
+          } else {
+            
           }
         } else {
           showError("Error saving quiz: " + data.message)
