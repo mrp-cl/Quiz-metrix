@@ -1,4 +1,3 @@
-
 /* Base Styles */
 * {
     margin: 0;
@@ -8,158 +7,49 @@
   }
   
   body {
-    display: flex;
     background-color: #f5f7fb;
     color: #333;
-  }
-  
-  /* Sidebar */
-  .sidebar {
-    width: 250px;
-    background-color: #fff;
-    height: 100vh;
-    padding: 20px 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 10;
-  }
-  
-  .logo {
-    padding: 0 20px 20px;
-    border-bottom: 1px solid #f0f0f0;
-  }
-  
-  .logo h2 {
-    color: #6366f1;
-    display: flex;
-    align-items: center;
-  }
-  
-  .sidebar nav ul {
-    list-style: none;
-    padding: 20px 0;
-  }
-  
-  .sidebar nav ul li {
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .sidebar nav ul li:hover {
-    background-color: #f5f7fb;
-  }
-  
-  .sidebar nav ul li.active {
-    background-color: #f0f2ff;
-    color: #6366f1;
-    font-weight: 500;
-  }
-  
-  .sidebar nav ul li i {
-    margin-right: 10px;
-    width: 20px;
-    text-align: center;
-  }
-  
-  .sidebar nav ul li.section-title {
-    font-size: 12px;
-    color: #9ca3af;
-    padding: 20px 20px 10px;
-    cursor: default;
-  }
-  
-  /* Main Content */
-  .main-content {
-    flex: 1;
     padding: 20px;
-    margin: auto;
-    max-width: 1300px;
   }
   
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  
-  .search-bar {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 8px 15px;
-    width: 300px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  }
-  
-  .search-bar i {
-    color: #9ca3af;
-    margin-right: 10px;
-  }
-  
-  .search-bar input {
-    border: none;
-    outline: none;
-    width: 100%;
-    font-size: 14px;
-  }
-  
-  .user-profile img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
-
   /* Dashboard Grid */
   .dashboard-grid {
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 350px;
     gap: 20px;
-    grid-template-areas:
-      "calendar events"
-      "tools events";
+    margin: 20px 0px 0px 0px;
   }
   
-  .calendar-section {
-    grid-area: calendar;
-  }
-  
-  .events-section {
-    grid-area: events;
+  .left-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
   
-  .tools-section {
-    grid-area: tools;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  .right-column {
+    display: flex;
+    flex-direction: column;
     gap: 20px;
   }
   
   /* Cards */
   .card {
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     overflow: hidden;
-    height: 100%;
     display: flex;
     flex-direction: column;
+    max-width: 350px;
+  }
+  
+  .calendar-card {
+    max-width: none;
+    height: auto;
   }
   
   .card-header {
-    padding: 15px 20px;
+    padding: 10px 15px;
     border-bottom: 1px solid #f0f0f0;
     display: flex;
     justify-content: space-between;
@@ -167,113 +57,153 @@
   }
   
   .card-header h3 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     display: flex;
     align-items: center;
+    margin: 0;
   }
   
   .card-header h3 i {
-    margin-right: 8px;
+    margin-right: 6px;
   }
   
   .card-header p {
-    font-size: 12px;
+    font-size: 11px;
     color: #9ca3af;
-    margin-top: 5px;
+    margin-top: 3px;
+    margin-bottom: 0;
   }
   
   .card-body {
-    padding: 20px;
+    padding: 15px;
     flex: 1;
-    overflow-y: auto;
   }
   
   .card-footer {
-    padding: 15px 20px;
+    padding: 10px 15px;
     border-top: 1px solid #f0f0f0;
     display: flex;
     justify-content: space-between;
   }
   
-  /* FullCalendar Customizations */
-  .calendar-card .card-body {
-    padding: 0;
+  /* Calendar Customizations */
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e0e0e0;
   }
   
-  .calendar-card {
-    height: 600px;
-  }
-  
-  #calendar {
-    height: 100%;
-  }
-  
-  .fc .fc-toolbar-title {
-    font-size: 1.2em;
-  }
-  
-  .fc .fc-button {
-    background-color: #6366f1;
-    border-color: #6366f1;
-  }
-  
-  .fc .fc-button:hover {
-    background-color: #4f46e5;
-    border-color: #4f46e5;
-  }
-  
-  .fc .fc-button-primary:not(:disabled).fc-button-active,
-  .fc .fc-button-primary:not(:disabled):active {
-    background-color: #4338ca;
-    border-color: #4338ca;
-  }
-  
-  .fc-event {
+  .today-button {
+    background: none;
+    border: none;
     cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
   }
   
-  .fc-event.past-event {
-    background-color: #9ca3af;
-    border-color: #9ca3af;
+  .month-navigation {
+    display: flex;
+    align-items: center;
+    gap: 15px;
   }
   
-  .fc-event.current-event {
-    background-color: #10b981;
-    border-color: #10b981;
+  .month-title {
+    font-size: 16px;
+    font-weight: 600;
+    min-width: 100px;
+    text-align: center;
   }
   
-  .fc-event.upcoming-event {
+  .nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .add-event-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    padding: 10px;
+  }
+  
+  .calendar-day-header {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px;
+    color: #777;
+  }
+  
+  .calendar-day {
+    text-align: center;
+    padding: 8px 0;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .calendar-day:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .calendar-day.today {
+    background-color: #e0e7ff;
+    color: #4f46e5;
+    font-weight: 600;
+  }
+  
+  .calendar-day.selected {
     background-color: #6366f1;
-    border-color: #6366f1;
+    color: white;
   }
   
-  /* Events Cards */
-  .past-events-card,
-  .current-events-card,
-  .upcoming-events-card {
-    flex: 1;
+  .calendar-day.has-event::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #ef4444;
   }
   
-  .past-events-card .card-header h3 i {
-    color: #9ca3af;
+  .calendar-day.other-month {
+    color: #ccc;
   }
   
-  .current-events-card .card-header h3 i {
-    color: #10b981;
-  }
-  
-  .upcoming-events-card .card-header h3 i {
-    color: #6366f1;
+  /* Events Card */
+  .current-events-card .card-body {
+    max-height: 300px;
+    overflow-y: auto;
   }
   
   .event-item {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 10px;
+    padding: 8px;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     transition: background-color 0.3s;
   }
   
@@ -282,21 +212,22 @@
   }
   
   .event-item .event-details h4 {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
   }
   
   .event-item .event-details p {
-    font-size: 12px;
+    font-size: 11px;
     color: #6b7280;
+    margin-bottom: 0;
   }
   
   .event-badge {
     display: inline-block;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 10px;
+    font-size: 10px;
     font-weight: 500;
   }
   
@@ -320,8 +251,8 @@
     border: none;
     color: #9ca3af;
     cursor: pointer;
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -336,52 +267,27 @@
   
   .empty-events {
     text-align: center;
-    padding: 15px 0;
+    padding: 10px 0;
     color: #9ca3af;
-    font-size: 12px;
-  }
-  
-  /* Goal Tracker */
-  .progress-container {
-    margin: 15px 0;
-  }
-  
-  .progress-label {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-    font-size: 12px;
-  }
-  
-  .progress-bar {
-    height: 8px;
-    background-color: #e5e7eb;
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  
-  .progress-fill {
-    height: 100%;
-    background-color: #6366f1;
-    border-radius: 4px;
-    transition: width 0.3s ease;
+    font-size: 11px;
   }
   
   /* Timer */
   .timer-tabs {
     display: flex;
     border-bottom: 1px solid #f0f0f0;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   
   .timer-tab {
     flex: 1;
     text-align: center;
-    padding: 10px;
+    padding: 8px;
     background: none;
     border: none;
     cursor: pointer;
     font-weight: 500;
+    font-size: 12px;
     color: #6b7280;
     transition: all 0.3s;
   }
@@ -393,25 +299,67 @@
   
   .timer-display {
     text-align: center;
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 700;
-    margin: 30px 0;
+    margin: 20px 0;
     font-variant-numeric: tabular-nums;
+  }
+  
+  /* Timer Footer */
+  .timer-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-top: 1px solid #f0f0f0;
+  }
+  
+  .timer-start-btn {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .timer-start-btn i {
+    margin-right: 8px;
+  }
+  
+  .timer-controls {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .timer-control-btn {
+    background: none;
+    border: none;
+    color: #555;
+    font-size: 16px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   /* Todo List */
   .todo-input {
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
   
   .todo-input input {
     flex: 1;
-    padding: 10px;
+    padding: 8px;
     border: 1px solid #e5e7eb;
     border-radius: 5px;
     outline: none;
-    font-size: 14px;
+    font-size: 13px;
   }
   
   .todo-input input:focus {
@@ -420,16 +368,17 @@
   
   .todo-list {
     list-style: none;
-    max-height: 200px;
+    max-height: 180px;
     overflow-y: auto;
+    padding-left: 0;
   }
   
   .todo-item {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 8px;
     border-radius: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     transition: background-color 0.3s;
   }
   
@@ -438,7 +387,7 @@
   }
   
   .todo-checkbox {
-    margin-right: 10px;
+    margin-right: 8px;
     cursor: pointer;
     color: #d1d5db;
   }
@@ -449,7 +398,7 @@
   
   .todo-text {
     flex: 1;
-    font-size: 14px;
+    font-size: 13px;
   }
   
   .todo-text.completed {
@@ -462,8 +411,8 @@
     border: none;
     color: #9ca3af;
     cursor: pointer;
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -476,11 +425,37 @@
     color: #ef4444;
   }
   
+  /* Goal Tracker */
+  .progress-container {
+    margin: 12px 0;
+  }
+  
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    font-size: 11px;
+  }
+  
+  .progress-bar {
+    height: 6px;
+    background-color: #e5e7eb;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background-color: #6366f1;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+  }
+  
   /* Buttons */
   .btn {
-    padding: 8px 16px;
+    padding: 6px 12px;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s;
@@ -491,7 +466,7 @@
   }
   
   .btn i {
-    margin-right: 5px;
+    margin-right: 4px;
   }
   
   .primary-btn {
@@ -515,8 +490,8 @@
   }
   
   .icon-btn {
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
     padding: 0;
     border-radius: 50%;
     background-color: transparent;
@@ -536,6 +511,48 @@
   
   .delete-btn:hover {
     background-color: #fecaca;
+  }
+  
+  /* Recent Section */
+  .recent-section {
+    margin-top: 20px;
+  }
+  
+  .recent-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .recent-item {
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .recent-item-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+  
+  .recent-item-type {
+    color: #6366f1;
+    font-weight: 500;
+  }
+  
+  .recent-item-title {
+    flex: 1;
+    margin: 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .recent-item-date {
+    color: #9ca3af;
   }
   
   /* Modals */
@@ -558,14 +575,14 @@
   
   .modal-content {
     background-color: white;
-    border-radius: 10px;
-    width: 400px;
+    border-radius: 8px;
+    width: 350px;
     max-width: 90%;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
   
   .modal-header {
-    padding: 15px 20px;
+    padding: 12px 15px;
     border-bottom: 1px solid #f0f0f0;
     display: flex;
     justify-content: space-between;
@@ -573,24 +590,25 @@
   }
   
   .modal-header h3 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
+    margin: 0;
   }
   
   .close-btn {
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
     color: #9ca3af;
   }
   
   .modal-body {
-    padding: 20px;
+    padding: 15px;
   }
   
   .modal-footer {
-    padding: 15px 20px;
+    padding: 12px 15px;
     border-top: 1px solid #f0f0f0;
     display: flex;
     justify-content: space-between;
@@ -598,33 +616,35 @@
   
   /* Form Elements */
   .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
   
   .form-group.split {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 8px;
   }
   
   .form-group label {
     display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
+    margin-bottom: 4px;
+    font-size: 13px;
     font-weight: 500;
   }
   
   .form-group input,
-  .form-group select {
+  .form-group select,
+  .form-group textarea {
     width: 100%;
-    padding: 8px 12px;
+    padding: 6px 10px;
     border: 1px solid #e5e7eb;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 13px;
   }
   
   .form-group input:focus,
-  .form-group select:focus {
+  .form-group select:focus,
+  .form-group textarea:focus {
     outline: none;
     border-color: #6366f1;
   }
@@ -636,70 +656,55 @@
   
   .slider-container input {
     flex: 1;
-    margin-right: 10px;
+    margin-right: 8px;
   }
   
   .slider-container span {
-    width: 30px;
+    width: 25px;
     text-align: center;
   }
   
-  /* Utility Classes */
-  .text-muted {
-    color: #9ca3af;
-    font-size: 12px;
+  /* Calendar Event Count Badge */
+  .calendar-day {
+    position: relative;
   }
   
+  .event-count-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: #6366f1;
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card.current-events-card {
+    height: 347px;
+}
+
+.icon-btn{
+    border: none;
+}
+
+.form-group input{
+    padding: 6px 0px 6px 10px;
+}
+
   /* Responsive Design */
-  @media (max-width: 1200px) {
+  @media (max-width: 992px) {
     .dashboard-grid {
       grid-template-columns: 1fr;
-      grid-template-areas:
-        "calendar"
-        "events"
-        "tools";
     }
   
-    .events-section {
-      flex-direction: row;
+    .card {
+      max-width: none;
     }
   }
-  
-  @media (max-width: 992px) {
-    .events-section {
-      flex-direction: column;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .sidebar {
-      width: 70px;
-    }
-  
-    .sidebar .logo h2,
-    .sidebar nav ul li span {
-      display: none;
-    }
-  
-    .sidebar nav ul li {
-      justify-content: center;
-    }
-  
-    .sidebar nav ul li i {
-      margin-right: 0;
-    }
-  
-    
-  
-    .tools-section {
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .search-bar {
-      width: 200px;
-    }
-  }
-  
   
