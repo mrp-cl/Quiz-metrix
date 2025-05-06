@@ -5,10 +5,14 @@ require './Config.php';
 use Middleware\Class\Config;   
 echo (new Config())->VendorConfig();
 
-
+if (!isset($_SESSION['oauth_state'])) { 
+    unset($_SESSION['oauth_state']);
+    header("Location: ../../") ; 
+    die('Access Denied.'); 
+} 
 // Verify the state parameter to prevent CSRF.
 if (empty($_GET['state']) || $_GET['state'] !== $_SESSION['oauth_state']) {
-    die('Invalid state parameter.');
+    die('Access Denied.'); 
 } 
 // Once verified, unset it to prevent reuse
 unset($_SESSION['oauth_state']);
@@ -62,11 +66,11 @@ if (isset($userData['error'])) {
     die("Error retrieving user info: " . $userData['error']['message']);
 }
 
-// Optional: Restrict access to a specific organization or school domain.
-// $allowedDomain = 'yourorganization.com';
-// if (strpos($userData['userPrincipalName'], '@' . $allowedDomain) === false) {
-//     die('Access denied: not an organization account.');
-// }
+//Optional: Restrict access to a specific organization or school domain.
+$allowedDomain = 'alabang.sti.edu.ph';
+if (strpos($userData['userPrincipalName'], '@' . $allowedDomain) === false) {
+    die('Access denied: not an organization account.');
+}
 
 // Save user information in the session.
 $_SESSION['user'] = $userData;
