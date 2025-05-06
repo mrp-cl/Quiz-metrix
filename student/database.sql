@@ -3,11 +3,12 @@ CREATE DATABASE IF NOT EXISTS quiz_metrix;
 USE quiz_metrix;
 
 -- Events table
-CREATE TABLE IF NOT EXISTS events (
-    event_id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    event_date DATE NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE `events`  (
+  `event_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  `event_date` date NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 );
 
 -- Tasks table
