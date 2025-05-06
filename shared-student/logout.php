@@ -1,11 +1,12 @@
 <?php
 session_start();
-$_SESSION = [];  
-session_unset();  
-session_destroy(); 
-header("Location: ../../landing-page/");
-exit;
- 
-// optional
-// header("Location: https://login.microsoftonline.com/common/oauth2/v2.0/logout?post_logout_redirect_uri=http://yourapp.com/login.php");
-// exit;
+$_SESSION = [];
+session_unset();
+session_destroy();
+
+$logoutRedirectUri = 'http://localhost/quiz-metrix/';
+$msLogoutUrl = 'https://login.microsoftonline.com/common/oauth2/v2.0/logout?' .
+               'post_logout_redirect_uri=' . urlencode($logoutRedirectUri);
+
+header("Location: $msLogoutUrl");
+exit();
