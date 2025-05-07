@@ -11,12 +11,22 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="notes.css">
 	<link rel="stylesheet" href="../../vendor/student/home/home.css">
-	<link rel="stylesheet" href="../../vendor/admin/users/users.css">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
 </head>
 <body>
+<?php
+        session_start();
+        // Check if user is logged in
+        if (!isset($_SESSION['user'])) {
+        header("Location: ../../landing-page/");
+        exit();
+        } 
+
+        $userData = $_SESSION['user']; 
+        $_SESSION['USER_NAME'] = $userData['displayName'];
+        ?>
 <?php
 include '../../shared-student/sidebar.php';
 include '../../shared-student/navbar.php';
@@ -79,7 +89,6 @@ include '../../shared-student/navbar.php';
     <script src="notes.js"></script>
     <script src="../../vendor/admin/home/home.js"></script>
     <script src="../../vendor/bootstrap/jquery.min.js" ></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </body>
 </html>

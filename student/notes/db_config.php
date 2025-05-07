@@ -1,7 +1,7 @@
 <?php
 // Database configuration
 $host = 'localhost';
-$db_name = 'quiz_creator';
+$db_name = 'quizmetrix'; // Database name
 $username = 'root';
 $password = ''; // Default XAMPP password is empty
 

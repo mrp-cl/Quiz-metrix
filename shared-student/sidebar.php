@@ -8,7 +8,7 @@
 
 			<li><a class="nav-link" href="#"><i class='bx bx-card icon'></i> Flashcard</a></li>
 			<li><a class="nav-link" href="../quiz"><i class='bx bx-check-double icon' ></i> Quiz</a></li>
-			<li><a class="nav-link" href="#"><i class='bx bx-notepad icon' ></i> Notes</a></li>
+			<li><a class="nav-link" href="../notes"><i class='bx bx-notepad icon' ></i> Notes</a></li>
 			
 		</ul>
 	</section>
