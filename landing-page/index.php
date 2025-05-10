@@ -1,6 +1,6 @@
 <?php 
     session_start();
-      require './middleware/Class/Config.php'; 
+      require '../Middleware/Class/Config.php'; 
       use Middleware\Class\Config;    
 
       echo (new Config())->VendorConfig(); 
@@ -29,13 +29,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <!-- Linking Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="./landing-page/landing-page.css" />
+    <link rel="stylesheet" href="../vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="landing-page.css" />
 
-    <link rel="icon" href="./assets copy/logo/apple-touch-icon-removebg-preview.png">
+    <link rel="icon" href="../assets copy/logo/apple-touch-icon-removebg-preview.png">
   </head>
   <body>
-     <?php include './landing-page/login/login-modal.php';?>
+     <?php include 'login/login-modal.php';?>
     <header>
       <nav class="navbar">
         <a href="#" class="nav-logo">
@@ -75,7 +75,7 @@
             </div>
           </div>
           <div class="hero-image-wrapper">
-            <img src="./assets/DrawKit/DrawKit - Education Illustration Pack/PNG/3 SCENE.png" alt="Coffee" class="hero-image" />
+            <img src="../assets/DrawKit/DrawKit - Education Illustration Pack/PNG/3 SCENE.png" alt="Coffee" class="hero-image" />
           </div>
         </div>
       </section>
@@ -83,7 +83,7 @@
       <section class="about-section" id="about">
         <div class="section-content">
           <div class="about-image-wrapper">
-            <img src="./assets/DrawKit/DrawKit - Education Illustration Pack/PNG/7 SCENE.png" alt="About" class="about-image" />
+            <img src="../assets/DrawKit/DrawKit - Education Illustration Pack/PNG/7 SCENE.png" alt="About" class="about-image" />
           </div>
           <div class="about-details">
             <h2 class="section-title">About Us</h2>
@@ -176,7 +176,7 @@
     <!-- Linking Swiper script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Linking custom script -->
-    <script src="./landing-page/landing-page.js"></script>
-    <script src="./vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="landing-page.js"></script>
+    <script src="../vendor/bootstrap/bootstrap.bundle.min.js"></script>
   </body>
 </html>

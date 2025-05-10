@@ -1,0 +1,179 @@
+#note-collapsed {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 50px;
+}
+
+#note-collapsed .card-body {
+  cursor: pointer;
+}
+
+#note-collapsed:hover {
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  background-color: #f8f9fa;
+}
+
+div#notes-container {
+  margin: 50px;
+}
+
+.container.mt-5 {
+  max-width: 100%;
+  margin: 0 auto;
+  /* background: #fff; */
+  border-radius: 10px;
+  padding: 25px 30px;
+  /* box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08); */
+}
+
+
+#note-content {
+  resize: none;
+  overflow: hidden; 
+  min-height: 50px; 
+  transition: height 0.1s ease; 
+  outline: none;
+}
+
+.edit-content {
+  resize: none;
+  overflow: hidden;
+  min-height: 50px;
+  transition: height 0.1s ease;
+  outline: none;
+}
+
+/* Color palette styles */
+.color-palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.color-option {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.color-option:hover {
+  transform: scale(1.1);
+}
+
+.color-option.selected {
+  border-color: #333;
+  transform: scale(1.1);
+}
+
+/* Note card colors */
+.note-color-default {
+  background-color: #ffffff;
+}
+
+.note-color-red {
+  background-color: #f8d7da;
+}
+
+.note-color-orange {
+  background-color: #fff3cd;
+}
+
+.note-color-yellow {
+  background-color: #fff8e1;
+}
+
+.note-color-green {
+  background-color: #d1e7dd;
+}
+
+.note-color-teal {
+  background-color: #d1ecf1;
+}
+
+.note-color-blue {
+  background-color: #cfe2ff;
+}
+
+.note-color-purple {
+  background-color: #e2d9f3;
+}
+
+.note-color-pink {
+  background-color: #f8d7f7;
+}
+
+.note-color-gray {
+  background-color: #e9ecef;
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+.note-icons {
+  color: #6c757d;
+}
+
+.note-icons i {
+  cursor: pointer;
+}
+
+.note-icons i:hover {
+  color: #495057;
+}
+
+#note-title {
+  resize: none;
+  outline: none;
+}
+
+.note-card {
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.note-card:hover {
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-menu {
+  min-width: 120px;
+}
+
+.note-content-truncated {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.note-title-truncated {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.note-content-full {
+  white-space: pre-wrap;
+}
+
+.note-content-full{
+  white-space: pre-wrap;
+}
+
+.edit-mode input,
+.edit-mode textarea {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+}

@@ -3,6 +3,27 @@
 * File include item demo only specific css only
 ******************************************************************************/
 
+.calendar-card {
+  padding: 1rem;
+  height: 630px;
+}
+#goalHeader, #studyTimerHeader, #todoHeader{
+  display: grid;
+}
+
+.resetAndSettings{
+  display: flex;
+}
+
+
+
+
+@media  (max-width: 1340px){
+  #pastHeader, #currentHeader, #upcomingHeader{
+    display: grid;
+  }
+}
+
 .menu .app-brand.demo {
   height: 64px;
   margin-top: 12px;
